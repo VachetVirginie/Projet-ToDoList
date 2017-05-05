@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="todolist.css" />
+    <title>todolist</title>
+</head>
+
+<body>
+    <h1> To Do List</h1>
+
+    <form id="form" action="index.html" method="GET">
+        <fieldset>
+
+            <label for="title">TITLE :</label>
+            <input id="input2" type="text" name="nom" id="titre">
+        </fieldset>
+
+
+        <fieldset>
+            <label for="liste">LISTE :</label>
+            <input id="inputa" type="text" name="prenom" id="list">
+        </fieldset>
+
+        <div id="button">
+            <input id="recup" type="submit" value="Envoyer" />
+
+        </div>
+    </form>
+
+    <h2>List</h2>
+    <p id="texte"></p>
+    <SCRIPT>
+        let rec = document.querySelector("#form");
+        rec.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let texte = document.querySelector("#texte");
+            let entree1 = document.querySelector("#inputa");
+            let entree2 = document.querySelector("#input2");
+            texte.innerHTML += entree2.value + " " + entree1.value + "<button> supprimer </button>";
+
+
+
+        });
+        let li = document.createElement("li");
+    </SCRIPT>
+
+</body>
+
+</html>

@@ -6,29 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="todolist.css" />
-    <title>Document</title>
+    <title>todolist</title>
 </head>
 
 <body>
-    <div class="container">
-        <p>
-            <label for="new-task">Add Item</label><input id="new-task" type="text"><button>Add</button>
-        </p>
+    <h1> To Do List</h1>
 
-        <h3>Todo</h3>
-        <ul id="incomplete-tasks">
-            <li><input type="checkbox"><label>Pay Bills</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
-            <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+    <form action="index.html" method="GET">
+        <fieldset>
 
-        </ul>
+            <label for="title">TITLE :</label>
+            <input type="text" name="nom" id="titre">
+        </fieldset>
 
-        <h3>Completed</h3>
-        <ul id="completed-tasks">
-            <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
-        </ul>
-    </div>
+
+        <fieldset>
+            <label for="liste">LISTE :</label>
+            <input type="text" name="prenom" id="list">
+        </fieldset>
+
+        <div id="button">
+            <input type="submit" value="Envoyer" />
+
+        </div>
+    </form>
+    <p id="pp"></p>
+    <h2>List</h2>
 
     <script>
+        let button = document.querySelector("#button");
+        button.addEventListener("submit", function(event) {
+            document.querySelector("#titre");
+            let titre = document.querySelector('#titre').value;
+
+            document.querySelector("#list");
+            let liste = document.querySelector("#list").value;
+            console.log(liste);
+            document.querySelector()("#pp");
+            pp.textcontent = titre + liste;
+        });
     </script>
 
 </body>
