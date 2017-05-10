@@ -23,29 +23,40 @@
         <fieldset>
             <label for="liste">LISTE :</label>
             <input id="inputa" type="text" name="prenom" id="list">
+
         </fieldset>
 
-        <div id="button">
-            <input id="recup" type="submit" value="Envoyer" />
+        <input id="recup" type="submit" value="Envoyer" />
 
-        </div>
+
     </form>
 
     <h2>List</h2>
     <p id="texte"></p>
     <SCRIPT>
         let rec = document.querySelector("#form");
+        let id = 0;
+
+        function supprimer(idarticle) {
+            document.getElementById("article" + idarticle).remove();
+
+
+
+        }
         rec.addEventListener("submit", function(e) {
             e.preventDefault();
-            let texte = document.querySelector("#texte");
-            let entree1 = document.querySelector("#inputa");
-            let entree2 = document.querySelector("#input2");
-            texte.innerHTML += entree2.value + " " + entree1.value + "<button> supprimer </button>";
+
+            let entree1 = document.querySelector("#input2");
+            let entree2 = document.querySelector("#inputa");
+            let elem = document.createElement("article");
+            elem.id = "article" + id;
+            elem.innerHTML = "<h1>" + entree1.value + "</h1>" + "<p>" + entree2.value + "</p>" + '<input onclick="supprimer(' + id + ')" id="button' + id + '" value="supprimer" type="button">' + '<input type="checkbox">';
+            document.body.appendChild(elem);
+            id++;
 
 
 
         });
-        let li = document.createElement("li");
     </SCRIPT>
 
 </body>
